@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>ESQ Quarks</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+/* Header/logo Title */
+.header {
+  text-align: center;
+  color: #1abc9c;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  height: 50vh;
+  width: 100%;
+  background-color: #1abc9c;
+}
+
+/* Increase the font size of the heading */
+.header h1 {
+  font-size: 40px;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Active/current link */
+.navbar a.active {
+  background-color: #666;
+  color: white;
+}
+
+/* Column container */
+.row {  
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  -ms-flex: 30%; /* IE10 */
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+/* Main column */
+.main {   
+  -ms-flex: 70%; /* IE10 */
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 1360px) {
+    .leader {
+      width:100% !important;
+      float:none;
+    }
+    .leader3 {
+      width:100% !important;
+      float:none;
+    }
+    .leader2 {
+      width:100% !important;
+      float:none;
+      height: 150px !important;
+      padding: 40px 0 !important;
+      display: block
+    }
+    #rcorners {
+      margin-left: auto;
+      margin-right: auto;
+      float:none;
+      display: block;
+    }
+    .rcorners {
+      margin-left: auto;
+      margin-right: auto;
+      float:none;
+      display: block;        
+    }
+    #rcornersr {
+      margin-left: auto;
+      margin-right: auto;
+      float:none !important;
+      display: block;
+    }
+}
+
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+
+img[src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"] {
+        display: none;
+}
+
+#rcorners {
+  border-radius: 25px;
+  border: 2px solid #1abc9c;
+  padding: 20px; 
+  width: 50px;
+  height: 150px;
+}
+.rcorners {
+  border-radius: 25px;
+  border: 2px solid #1abc9c;
+  padding: 20px; 
+  width: 50px;
+  height: 150px;
+}
+#rcornersr {
+  border-radius: 25px;
+  border: 2px solid #1abc9c;
+  padding: 20px; 
+  width: 50px;
+  height: 150px;
+  float:right;
+}
+.leader {
+  width: 45%;
+  margin: 0px;
+  height: 400px;
+}
+.leader2 {
+  width: 50%;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <img src = 'img/Quarks Zoom Background.png' style="height:100%;width:100%;">
+</div>
+
+<div class="navbar">
+  <a href="index.html" class="active">Home</a>
+  <a href="snake.html">Snake</a>
+  <a href="wordsearch.html">Wordsearch</a>
+  <a href="pics.html">Pictures</a>
+  <a href="videos.html">Videos</a>
+  <a href="https://docs.google.com/document/d/1_1c7f5BFCRIxtEa8BaZfrmDEdBr9FCMFEEOspUeCkAI/edit?usp=sharing">Bonus Activities</a>
+  <a href="snake.php" class="right">Help</a>
+</div>
+
+<div class="row">
+  <div class="side" style="text-align:center;">
+      
+    <h2>Today's Activities:</h2>
+    
+    <h5 id="t1"></h5>
+    <img id="pic1" style="height:200px;width:200px;">
+    <p id="D1"></p>
+    
+    <br><br>
+    
+    <h5 id="t2"></h5>
+    <img id="pic2" style="height:120px;width:200px;">
+    <p id="D2"></p>
+    
+    <br>
+    
+    <h2><u>Quarks Spotlight</u></h2>
+    <p><b>Magic Number Riddle:</b> Max wants to join a secret club where the owner says a number but the member has to say the correct number back. Max doesn't no what the password is so he decides to eavesdrop. The first time, the owner said 12 with a correct reply of 6, the second time the owner says 6 with another correct reply of 3. When max trys, the owner says 10, max replys with half of that (12=6, 6=3), so he says 5, BUT HE IS WRONG!!!!!! How does the password work? - Sent in by a camper</p>
+    
+    <br>
+    <p><b>Grasshopper Coding Art:</b></p>
+    <img src='img/camperArt.png' height='400' width = '200' style="height:400px;width:200px;margin:auto;">
+    <p>- submitted by a camper</p>
+    
+  </div>
+  
+  <div class="main">
+      
+    <h2>Meet the Leaders</h2>
+    
+    <div class="leader" style="display:block;min-width:450px;float:left;">
+        <img id="rcorners" src = 'img/Pauline.png' style="height:400px;width:400px;object-fit:cover;object-position:0px -50px;">
+    </div>
+    <div class="leader2" style="display:block;min-width:450px;height:400px;float:right;text-align:center;padding: 150px 0;">Hi! My name is Pauline. I’m finishing up my last year at the University of Waterloo studying Kinesiology. I love walking, painting and being outside as much as I can. This is my third year working with ESQ and I’m really excited to be your leader. See you soon!
+    </div>
+    
+    <div class="leader" style="display:block;float:right;min-width:450px;">
+        <img id="rcornersr" src = 'img/RyanPic.png' style="height:400px;width:400px;object-fit:cover;">
+    </div>
+    <div class="leader2" style="display:block;min-width:450px;height:400px;float:left;text-align:center;padding: 150px 0;">Hello! My name is Ryan, and I’m a psychology student at the University of Waterloo. I like video games, exercising, and learning new things. This is my first time working with ESQ, so you’re one of my first campers! I look forward to doing some awesome activities with you guys :D
+    </div>
+    
+    <div class="leader3" style="display:block;min-width:450px;width:50%;float:left;">
+        <img class="rcorners" src = 'img/Holden.jpeg' style="height:400px;width:400px;object-fit:cover;object-position:0px 0px;">
+    </div>
+    <div class="leader2" id="Holden" style="display:block;min-width:450px;height:400px;float:right;text-align:center;padding: 150px 0;">Hi everyone! My name is Holden, and I will be your high school leader for the summer. I am going into grade 11 in the fall, and love mountain biking, snowboarding and listening to music. This is my second year with ESQ and I am excited to see what this summer has in store for all of us!
+    </div>
+    
+    <br>
+  </div>
+</div>
+
+<div class="footer" style="text-align:center;background-color:#666;padding:20px;">
+  <h2></h2>
+</div>
+<script>
+    var date = new Date()
+    var day = date.getDay()
+    var nums = [1,2,3,4,5]
+    var days = ['mon','tue','wed','thu','fri']
+    if (day == 0 || day == 6) {
+        day = 'mon'
+    }
+    else {
+        day = day - 1
+        for (i=0;i<5;i++) {
+            if (day == i) {
+                day = days[i]
+            }
+        }
+    }
+    Date.prototype.yyyymmdd = function() {
+      var mm = this.getMonth() + 1; // getMonth() is zero-based
+      var dd = this.getDate();
+    
+      return [this.getFullYear(),
+              (mm>9 ? '' : '0') + mm,
+              (dd>9 ? '' : '0') + dd
+             ].join('');
+    };
+    
+    var data = {
+    "20200706": {"mon":{
+                    "pic1": "img/pollenPitcher.png",
+                    "pic2": "img/EBC.png",
+                    "d1":"Learn about cross pollination by making 2 different flowers; one to launch pollen and one to catch it. The catching flower is designed to close once it catches a pollen ball.",
+                    "d2":"Have you ever wondered about energy? What is it? What types are there? Well in today's activity you are going to answer all these questions and more while building your very own wind up elastic band car.",
+                    "t1":"Camp A: Pollen Pitcher",
+                    "t2":"Camp C: Elastic Band Car"},
+                 "tue":{
+                    "pic1": "img/grasshopper.png",
+                    "pic2": "img/anthill.png",
+                    "d1":"Have you ever wanted to learn Javascript coding, but thought it was too hard to learn? In this activity campers will learn the basics of javascript while completing coding challenges on Grasshopper.app.",
+                    "d2":"Learn about ant colonies and their endless, interconnected tunnels while making a marble maze. Campers will have to move their marble “ant” through their maze to reach a specific area in their  tunnel. ",
+                    "t1":"Camp A: Grasshopper Coding",
+                    "t2":"Camp C: Ant Marble Maze"},
+                 "wed":{
+                    "pic1": "img/quiz.png",
+                    "pic2": "img/MC.png",
+                    "d1":"Learn about circuits and electricity by making a quiz board that lights up when you get the right answer.",
+                    "d2":"Learn to code using a minecraft-themed game on Code.org! This activity will teach you about JavaScript and the basics of coding.",
+                    "t1":"Camp A: The Light is Right",
+                    "t2":"Camp C: Coding With Minecraft"},
+                 "thu":{
+                    "pic1": "img/car.png",
+                    "pic2": "img/light.png",
+                    "d1":"Learn about the importance of renewable energy while making your own unique version of a balloon powered car! You will use the engineering cycle to make your car the best you can.",
+                    "d2":"Make a colour changing traffic light. No fancy coding or programming required. This manual traffic light will light up your day, literally!",
+                    "t1":"Camp A: Balloon Powered Car",
+                    "t2":"Camp C: Traffic Light"},
+                 "fri":{
+                    "pic1": "img/pixels.png",
+                    "pic2": "img/dome.png",
+                    "d1":"Explore the power of digital screens by coding messages for your friends to uncover by building a picture out of pixels.",
+                    "d2":"Build your own geodesic dome out of paper to learn about how stable structures can resist internal and external forces.",
+                    "t1":"Camp A: Pixel Perfect",
+                    "t2":"Camp C: Geodesic Dome"}},
+    "20200713": {"mon":{
+                    "pic1": "img/rice.png",
+                    "pic2": "img/pollenPitcher.png",
+                    "d1":"Not all farmers have flat plots of land. Learn how farmers living on hilly terrains grow their crops by making your own rice terrace irrigation system",
+                    "d2":"Learn about cross pollination by making 2 different flowers; one to launch pollen and one to catch it. The catching flower is designed recoil closed once it catches a pollen ball",
+                    "t1":"Camp B: Rice Terrace",
+                    "t2":"Camp A: Pollen Pitcher"},
+                 "tue":{
+                    "pic1": "img/bball.png",
+                    "pic2": "img/grasshopper.png",
+                    "d1":"Have you ever wanted to learn Python coding, but thought it was too hard to learn? In this activity campers will learn the basics of Python using a step-by-step guide for making a basketball game on Code.org.",
+                    "d2":"Have you ever wanted to learn Javascript coding, but thought it was too hard to learn? In this activity campers will learn the basics of javascript while completing coding challenges on Grasshopper.app.",
+                    "t1":"Camp B: Python Basketball Game",
+                    "t2":"Camp A: Grasshopper Coding"},
+                 "wed":{
+                    "pic1": "img/EC.png",
+                    "pic2": "img/quiz.png",
+                    "d1":"Learn about electricity and electrical circuits while making your very own lightning-fast electric toy car!",
+                    "d2":"Learn about circuits and electricity by making a quiz board that lights up when you get the right answer.",
+                    "t1":"Camp B: Electric Car",
+                    "t2":"Camp A: The Light is Right"},
+                 "thu":{
+                    "pic1": "img/newton.png",
+                    "pic2": "img/car.png",
+                    "d1":"Learn about energy, momentum, and the conservation of energy and momentum by building your own Newton’s cradle!",
+                    "d2":"Learn about the importance of renewable energy while making your own unique version of a balloon powered car! You will use the engineering cycle to make your car the best you can.",
+                    "t1":"Camp B: Newton's Cradle",
+                    "t2":"Camp A: Balloon Powered Car"},
+                 "fri":{
+                    "pic1": "img/dragon.png",
+                    "pic2": "img/pixels.png",
+                    "d1":"Learn about stents and their purpose in medical procedures. Make your own stent and simulate a balloon angioplasty medical procedure in an artery.",
+                    "d2":"Explore the power of digital screens by coding messages for your friends to uncover by building a picture out of pixels.",
+                    "t1":"Camp B: Dragon Stent",
+                    "t2":"Camp A: Pixel Perfect"}},
+    "20200720": {"mon":{
+                    "pic1": "img/EBC.png",
+                    "pic2": "img/rice.png",
+                    "d1":"Have you ever wondered about energy? What is it? What types are there? Well in today's activity you are going to answer all these questions and more while building your very own wind up elastic band car.",
+                    "d2":"Not all farmers have flat plots of land. Learn how farmers living on hilly terrains grow their crops by making your own rice terrace irrigation system",
+                    "t1":"Camp C: Elastic Band Car",
+                    "t2":"Camp B: Rice Terrace"},
+                 "tue":{
+                    "pic1": "img/anthill.png",
+                    "pic2": "img/bball.png",
+                    "d1":"Learn about ant colonies and their endless, interconnected tunnels while making a marble maze. Campers will have to move their marble “ant” through their maze to reach a specific area in their  tunnel. ",
+                    "d2":"Have you ever wanted to learn Python coding, but thought it was too hard to learn? In this activity campers will learn the basics of Python using a step-by-step guide for making a basketball game on Code.org.",
+                    "t1":"Camp C: Ant Marble Game",
+                    "t2":"Camp B: Python Basketball Game"},
+                 "wed":{
+                    "pic1": "img/MC.png",
+                    "pic2": "img/EC.png",
+                    "d1":"Learn to code using a minecraft-themed game on Code.org! This activity will teach you about JavaScript and the basics of coding.",
+                    "d2":"Learn about electricity and electrical circuits while making your very own lightning-fast electric toy car!",
+                    "t1":"Camp C: Coding With Minecraft",
+                    "t2":"Camp B: Electric Car"},
+                 "thu":{
+                    "pic1": "img/light.png",
+                    "pic2": "img/newton.png",
+                    "d1":"Make a colour changing traffic light. No fancy coding or programming required. This manual traffic light will light up your day, literally!",
+                    "d2":"Learn about energy, momentum, and the conservation of energy and momentum by building your own Newton’s cradle!",
+                    "t1":"Camp C: Traffic Light",
+                    "t2":"Camp B: Newton's Cradle"},
+                 "fri":{
+                    "pic1": "img/dome.png",
+                    "pic2": "img/dragon.png",
+                    "d1":"Build your own geodesic dome out of paper to learn about how stable structures can resist internal and external forces.",
+                    "d2":"Learn about stents and their purpose in medical procedures. Make your own stent and simulate a balloon angioplasty medical procedure in an artery.",
+                    "t1":"Camp C: Geodesic Dome",
+                    "t2":"Camp B: Dragon Stent"}},
+    "20200727": {"mon":{
+                    "pic1": "img/pollenPitcher.png",
+                    "pic2": "img/EBC.png",
+                    "d1":"Learn about cross pollination by making 2 different flowers; one to launch pollen and one to catch it. The catching flower is designed to close once it catches a pollen ball.",
+                    "d2":"Have you ever wondered about energy? What is it? What types are there? Well in today's activity you are going to answer all these questions and more while building your very own wind up elastic band car.",
+                    "t1":"Camp A: Pollen Pitcher",
+                    "t2":"Camp C: Elastic Band Car"},
+                 "tue":{
+                    "pic1": "img/grasshopper.png",
+                    "pic2": "img/anthill.png",
+                    "d1":"Have you ever wanted to learn Javascript coding, but thought it was too hard to learn? In this activity campers will learn the basics of javascript while completing coding challenges on Grasshopper.app.",
+                    "d2":"Learn about ant colonies and their endless, interconnected tunnels while making a marble maze. Campers will have to move their marble “ant” through their maze to reach a specific area in their  tunnel. ",
+                    "t1":"Camp A: Grasshopper Coding",
+                    "t2":"Camp C: Ant Marble Maze"},
+                 "wed":{
+                    "pic1": "img/quiz.png",
+                    "pic2": "img/MC.png",
+                    "d1":"Learn about circuits and electricity by making a quiz board that lights up when you get the right answer.",
+                    "d2":"Learn to code using a minecraft-themed game on Code.org! This activity will teach you about JavaScript and the basics of coding.",
+                    "t1":"Camp A: The Light is Right",
+                    "t2":"Camp C: Coding With Minecraft"},
+                 "thu":{
+                    "pic1": "img/car.png",
+                    "pic2": "img/light.png",
+                    "d1":"Learn about the importance of renewable energy while making your own unique version of a balloon powered car! You will use the engineering cycle to make your car the best you can.",
+                    "d2":"Make a colour changing traffic light. No fancy coding or programming required. This manual traffic light will light up your day, literally!",
+                    "t1":"Camp A: Balloon Powered Car",
+                    "t2":"Camp C: Traffic Light"},
+                 "fri":{
+                    "pic1": "img/pixels.png",
+                    "pic2": "img/dome.png",
+                    "d1":"Explore the power of digital screens by coding messages for your friends to uncover by building a picture out of pixels.",
+                    "d2":"Build your own geodesic dome out of paper to learn about how stable structures can resist internal and external forces.",
+                    "t1":"Camp A: Pixel Perfect",
+                    "t2":"Camp C: Geodesic Dome"}},
+    "20200810": {"mon":{
+                    "pic1": "img/rice.png",
+                    "pic2": "img/pollenPitcher.png",
+                    "d1":"Not all farmers have flat plots of land. Learn how farmers living on hilly terrains grow their crops by making your own rice terrace irrigation system",
+                    "d2":"Learn about cross pollination by making 2 different flowers; one to launch pollen and one to catch it. The catching flower is designed recoil closed once it catches a pollen ball",
+                    "t1":"Camp B: Rice Terrace",
+                    "t2":"Camp A: Pollen Pitcher"},
+                 "tue":{
+                    "pic1": "img/bball.png",
+                    "pic2": "img/grasshopper.png",
+                    "d1":"Have you ever wanted to learn Python coding, but thought it was too hard to learn? In this activity campers will learn the basics of Python using a step-by-step guide for making a basketball game on Code.org.",
+                    "d2":"Have you ever wanted to learn Javascript coding, but thought it was too hard to learn? In this activity campers will learn the basics of javascript while completing coding challenges on Grasshopper.app.",
+                    "t1":"Camp B: Python Basketball Game",
+                    "t2":"Camp A: Grasshopper Coding"},
+                 "wed":{
+                    "pic1": "img/EC.png",
+                    "pic2": "img/quiz.png",
+                    "d1":"Learn about electricity and electrical circuits while making your very own lightning-fast electric toy car!",
+                    "d2":"Learn about circuits and electricity by making a quiz board that lights up when you get the right answer.",
+                    "t1":"Camp B: Electric Car",
+                    "t2":"Camp A: The Light is Right"},
+                 "thu":{
+                    "pic1": "img/newton.png",
+                    "pic2": "img/car.png",
+                    "d1":"Learn about energy, momentum, and the conservation of energy and momentum by building your own Newton’s cradle!",
+                    "d2":"Learn about the importance of renewable energy while making your own unique version of a balloon powered car! You will use the engineering cycle to make your car the best you can.",
+                    "t1":"Camp B: Newton's Cradle",
+                    "t2":"Camp A: Balloon Powered Car"},
+                 "fri":{
+                    "pic1": "img/dragon.png",
+                    "pic2": "img/pixels.png",
+                    "d1":"Learn about stents and their purpose in medical procedures. Make your own stent and simulate a balloon angioplasty medical procedure in an artery.",
+                    "d2":"Explore the power of digital screens by coding messages for your friends to uncover by building a picture out of pixels.",
+                    "t1":"Camp B: Dragon Stent",
+                    "t2":"Camp A: Pixel Perfect"}},
+    "20200817": {"mon":{
+                    "pic1": "img/EBC.png",
+                    "pic2": "img/rice.png",
+                    "d1":"Have you ever wondered about energy? What is it? What types are there? Well in today's activity you are going to answer all these questions and more while building your very own wind up elastic band car.",
+                    "d2":"Not all farmers have flat plots of land. Learn how farmers living on hilly terrains grow their crops by making your own rice terrace irrigation system",
+                    "t1":"Camp C: Elastic Band Car",
+                    "t2":"Camp B: Rice Terrace"},
+                 "tue":{
+                    "pic1": "img/anthill.png",
+                    "pic2": "img/bball.png",
+                    "d1":"Learn about ant colonies and their endless, interconnected tunnels while making a marble maze. Campers will have to move their marble “ant” through their maze to reach a specific area in their  tunnel. ",
+                    "d2":"Have you ever wanted to learn Python coding, but thought it was too hard to learn? In this activity campers will learn the basics of Python using a step-by-step guide for making a basketball game on Code.org.",
+                    "t1":"Camp C: Ant Marble Game",
+                    "t2":"Camp B: Python Basketball Game"},
+                 "wed":{
+                    "pic1": "img/MC.png",
+                    "pic2": "img/EC.png",
+                    "d1":"Learn to code using a minecraft-themed game on Code.org! This activity will teach you about JavaScript and the basics of coding.",
+                    "d2":"Learn about electricity and electrical circuits while making your very own lightning-fast electric toy car!",
+                    "t1":"Camp C: Coding With Minecraft",
+                    "t2":"Camp B: Electric Car"},
+                 "thu":{
+                    "pic1": "img/light.png",
+                    "pic2": "img/newton.png",
+                    "d1":"Make a colour changing traffic light. No fancy coding or programming required. This manual traffic light will light up your day, literally!",
+                    "d2":"Learn about energy, momentum, and the conservation of energy and momentum by building your own Newton’s cradle!",
+                    "t1":"Camp C: Traffic Light",
+                    "t2":"Camp B: Newton's Cradle"},
+                 "fri":{
+                    "pic1": "img/dome.png",
+                    "pic2": "img/dragon.png",
+                    "d1":"Build your own geodesic dome out of paper to learn about how stable structures can resist internal and external forces.",
+                    "d2":"Learn about stents and their purpose in medical procedures. Make your own stent and simulate a balloon angioplasty medical procedure in an artery.",
+                    "t1":"Camp C: Geodesic Dome",
+                    "t2":"Camp B: Dragon Stent"}}}
+    date = date.yyyymmdd()
+    weeks = [20200706, 20200713, 20200720, 20200727, 20200810, 20200817]
+    function setDay(date, day) {
+        if (weeks[0]>parseInt(date)) {
+            week = weeks[0]
+            day = 'mon'
+        }
+        else if (weeks[5]<parseInt(date)) {
+            week = weeks[0].toString()
+            day = 'mon'
+        }
+        else {
+            for (i=0;i<6;i++) {
+                if (weeks[i] <= parseInt(date) && weeks[i+1]>parseInt(date)) {
+                    week = weeks[i]
+                }
+            }
+        }
+        document.getElementById('pic1').src = data[week][day]['pic1']
+        document.getElementById('D1').innerHTML = data[week][day]['d1']
+        document.getElementById('t1').innerHTML = data[week][day]['t1']
+        document.getElementById('pic2').src = data[week][day]['pic2']
+        document.getElementById('D2').innerHTML = data[week][day]['d2']
+        document.getElementById('t2').innerHTML = data[week][day]['t2']
+    }
+    setDay(date, day)
+</script>
+</body>
+</html>

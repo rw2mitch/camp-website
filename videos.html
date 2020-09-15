@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style>
+      body {
+          background-color: #1abc9c;
+          text-align: center;
+          width: 100%;
+          height: 100%;
+          margin: 0;
+          padding: 0;
+      }
+      img[src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"] {
+        display: none;
+      }
+      html {
+          width: 100%;
+          height: 100%;
+          margin: 0;
+          padding: 0;
+      }
+      .center-screen {
+          display: inline-block;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          min-height: 80vh;
+      }
+      h2 {
+          border-width:2px;
+          border-color:black;
+          border-style:solid;
+          width: 200px;
+          margin-left: auto;
+          margin-right: auto;
+          background-color:powderblue;
+      }
+      h1 {
+          border-width:2px;
+          border-color:black;
+          border-style:solid;
+          width: 95%;
+          margin-left: auto;
+          margin-right: auto;
+          background-color:powderblue;
+      }
+      iframe {
+          width: 420px !important;
+          height: 315px !important;
+      }
+      @media screen and (max-width: 1050px) {
+            .left {
+              width:100% !important;
+              float:none;
+              display: block;
+              height: auto !important;
+            }
+            .right {
+              width:100% !important;
+              float:none;
+              display: block;
+              height: auto !important;
+              padding-bottom: 30px;
+            }
+      }
+  </style>
+</head>
+
+    <div id="camp" class="center-screen" style="background:white;width:85%;margin:auto;margin-top:5%;margin-bottom:5%;height:90%;overflow:hidden;position:relative;overflow:auto;">
+        <h1>Camp Videos</h1>
+        
+        <div class="left" style="float:left;width:50%;text-align:center;height:100%;padding-bottom:">
+            <div id='leftVids'>
+            <h2>Lego Flight Disaster</h2>
+            <iframe width="420" height="315" src="https://www.youtube.com/embed/ZASsr-Ihjv4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            
+        </div>
+        
+        <div class="right" style="float:right;width:50%;text-align:center;height:100%;">
+            
+            <div id='rightVids'>
+            <h2>Pool Chain Reaction</h2>
+            <iframe width="420" height="315" src="https://www.youtube.com/embed/D70CwBVzX7c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+    
+<script>
+function hidePage(pageID) {
+    document.getElementById(pageID).style.visibility = 'hidden'
+}
+function showPage(pageID) {
+    document.getElementById(pageID).style.visibility = 'visible'
+}
+</script>
+</body>
+
+</html>
