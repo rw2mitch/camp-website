@@ -1,0 +1,37 @@
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+table.gameboard { 
+    border-spacing: 3px;
+    border-collapse: separate;
+    border: 5px #999 solid; 
+    margin-left: auto; 
+    margin-right: auto;
+    border-radius: 10px;
+}
+.gameboard td { 
+    opacity: 0.9;
+    font-family: arial, sans-serif; 
+    font-size: 1.5em; 
+    font-weight: bold; 
+    text-align: center; 
+    vertical-align: middle; 
+    color: #543; 
+    background: #ffe; 
+    margin: 2px; padding: 6px; 
+    border: 1px #eef solid; 
+    width: 1em;
+    border-radius: 3px 6px;
+}
+td.gameboard_over{ 
+    color: #fff; 
+    background: #000; 
+}
+td.gameboard_clicked{ 
+    background: #fff;
+    opacity: 0.5;
+}
